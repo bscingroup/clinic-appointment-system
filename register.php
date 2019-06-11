@@ -156,7 +156,7 @@ Birthday:
  	<br>
 
 	Reset:
-	<input type="Reset" name="Clear" >
+	<input type="Reset" name="Reset" >
 
 	Submit:
 	<input type="Submit" name="submit" >

@@ -1,12 +1,12 @@
 <?php
 	session_start();
 	include("connect.php");
+
+
 	if(isset($_POST["submit"])){
 		$email = $_POST["email"];
 
-
-		//encryption function
-		$password = md5($_POST["pass"]);
+		$password = md5($_POST["pass"]); //encryption function
 
 		$query ="select * from users where email ='$email' AND password='$password'";
 		
@@ -30,7 +30,7 @@
 <html>
 <head>
 <meta charset="UTF-8"> 
-	<title>login</title>
+	<title>doctor's sigin</title>
 	
 
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -38,24 +38,23 @@
 </head>
 <body>
 
-	<ul> 		<li><a href="rose.php">Home</a></li>
-				<li><a href="project.php">Register</a></li>
-				<li><a href="project1.php">Login</a></li>
-				<li><a href="project2.php">Services</a></li>
+	<ul style="list-style-type: none">
+				<li><a href="doctor.php">form</a></li>
+				
+				<li><a href="doctor1.php">signin</a></li>
+				<li><a href="doctor2.php">patient's booking</a></li>
+				<li><a href="doctor.php">signout</a></li>
 			</ul>
-	<div id="ben">
+	<div id="">
 	
 
-	<form action="project1.php" method="post">
+	<form action=".php" method="post">
 	<center>
 		
 	
 		<h1><u>CLINIC APPOINTMENT SYSTEM</u></h1>
-		<h2><i>Hi welcome to our login page.</i></h2>
-	 
-	
-<p>Please fill the correct E-mail address and Password<br>
-you entered in registration form so as to login:- </p>
+		<h2><i>log-in form</i></h2>
+
 
 	<table>
 <tr>
@@ -76,14 +75,9 @@ you entered in registration form so as to login:- </p>
 	<input type="Submit" name="submit" value="Enter" >
 
 
-	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	&nbsp
 
 	<input type="Reset" name="Reset" value="Clear" >
-
-
-	
-	<br>
-
 
 
 	</form>
@@ -92,17 +86,15 @@ you entered in registration form so as to login:- </p>
 	
 		<br>
 		<a href="#">Change Password.</a>
-		
-		
+	<br>
 	
 	
 	</center>
-	
-		 <br> <br> >
+ 
 		 <center>
 	 <ins>
 	&copyClinic appointment system 2019:
 	</ins></center>
-	</div></div>
+	</div>
 </body>
 </html>
