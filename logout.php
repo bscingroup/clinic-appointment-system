@@ -1,4 +1,4 @@
 <?php
-include '../core/config.php';
-unset($_SESSION['admin']);
-header('Location: ../second.php');
+require_once 'core/config.php';
+unset($_SESSION['customer']);
+header('Location:third.php');
