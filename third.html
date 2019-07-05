@@ -2,24 +2,21 @@
 	require_once 'core/config.php';
 	require_once 'core/functions.php';
 
-	
-	// if(is_loggedin_customer()){
- //        login_error_redirect_logout();
- //    }
+	if(is_loggedin_customer()){
+        login_error_redirect_logout();
+    }
     
 	if(isset($_POST["submit"])){
-  		$errors = array();
-  		$email = ((isset($_POST['email']))?clean($_POST['email']):'');
-  		$password = ((isset($_POST['password']))?clean($_POST['password']):'');
-  		$sql = $db->query("SELECT * FROM customer WHERE email = '$email'");
-  		$sql_admin = $db->query("SELECT * FROM users WHERE email = '$email'");
+  $errors = array();
+  $email = ((isset($_POST['email']))?clean($_POST['email']):'');
+  $password = ((isset($_POST['password']))?clean($_POST['password']):'');
+  $sql = $db->query("SELECT * FROM customer WHERE email = '$email'");
+  $sql_admin = $db->query("SELECT * FROM users WHERE email = '$email'");
+  $user = mysqli_fetch_assoc($sql);
+  $user_admin = mysqli_fetch_assoc($sql_admin);
+  $pass = $user_admin['password'];
 
-  		$user = mysqli_fetch_assoc($sql);
-  		$user_admin = mysqli_fetch_assoc($sql_admin);
-  		$pass = $user_admin['password'];
-
-	// untill the user fails to log in this echo statement should run 
-  // echo $user['password'];
+echo $user['password'];
     if(empty($email)||empty($password)){
       $errors[]='You must enter both Email and Password';
     }
@@ -27,44 +24,25 @@
         $error[]='Please check the  Email you entered';
     }
     else{
-
         if(mysqli_num_rows($sql_admin) >0){
             //var_dump($user_admin);
-
             if(!password_verify($password,$pass)) {
             $errors[]= 'The password you entered is incorrect,please try again';
             }else{
             //login admin
-            	/*
-            	$strDoctor = $user_admin['permission'];
-            	if ( $strDoctor == "doctor"){
-            		$_SESSION['doctor'] = $user_admin['id'];
-            		header('Location: admin/doctor2.php');
-            	} else {
-            		*/
-            		login($user_admin['id']);
-            	// }
+            $_SESSION['admin'] = $user_admin['id'];
+            header('Location: admin/doctors.php');
             }
         }
-
         if(mysqli_num_rows($sql) >0){
             if(!password_verify($password,$user['password'])) {
-             $errors[] = 'The password you entered is incorrect,please try again';
-            // var_dump($errors);
-            // print_r($errors);
-            if(!empty($errors)){
-            	foreach ($errors as $key => $value) {
-            		echo $value;
-            	}
-            }
-
+            echo 'The password you entered is incorrect,please try again';
             }else{
            // login the users
-              	$user_id = $user['id'];
-              	login_customer($user_id);
-   	
-   	// The line below wont run becuse of redirect made in log in user
-   				// $_SESSION['success'] = 'You are Successfull Logged in ';
+              $user_id = $user['id'];
+            $_SESSION['customer'] = $user_id;
+            header('Location: project2.php');
+       $_SESSION['success'] = 'You are Successfull Logged in ';
          }
         }
     }

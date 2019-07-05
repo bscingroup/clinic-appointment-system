@@ -45,7 +45,7 @@
 
 	</style>
 </head>
-<body bgcolor="black">
+<body bgcolor="#ABDCD6">
 	<div class="ben">
 		<div class="header">
 			<h1><i>Clinic appointment system</i></h1>
@@ -64,12 +64,8 @@
 	 <ul>
  	 <li><a href="project2.php">booking-another</a></li>
  	 <br>
-           <li><a href="index.php">signout</a></li>
+           <li><a href="logout.php">signout</a></li>
       </ul>
 </div></p>
-
-<footer style="font-size: 25px"><ins>
-				&copyClinic appointment system 2019:
-			</ins></footer></center>
 </body>
 </html>

@@ -19,12 +19,19 @@
 	<div class="column"><ul>
 				
 				<li><br ><a href="second.php">Register</a><br ><br><br></li>
-				<li><a href="third.php">Login</a><br><br><br></li>
+				<?php 
+				session_start();
+			
+				if ( isset($_SESSION['customer'])){
+					 ?>
+					<li><a href="logout.php">Logout</a><br><br><br></li>
+				<?php } else { ?>
+					<li><a href="third.php">Login</a><br><br><br></li>
+				<?php } ?>
 				<li><a href="about.php">About</a><br ><br><br></li>
-				<li><a href="contact.php">Contact</a><br ><br><br></li> 
+				<li><a href="help.php">Help</a><br ><br><br></li> 
 				</ul></div>
 			
-		
 		<div class="column">
 
 		<div class="hello"> <img src="hosp3.jpg" width="50%" height="200px"><img src="hosp1.jpg" width="50%" height="200px"></div>

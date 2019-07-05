@@ -1,4 +1,9 @@
 <?php
 require_once 'core/config.php';
 unset($_SESSION['customer']);
-header('Location:third.php');
+$_SESSION['success'] = null;
+$_SESSION['admin'] = null;
+$_SESSION['doctor'] = null;
+
+header('Location: index.php');
+// header('Location:third.php');

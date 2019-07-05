@@ -141,16 +141,16 @@
 
 	<form action="second.php" method="post">
 
-	First name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="fname"  required class="inpt1"><br>
-	Middle name &nbsp&nbsp&nbsp&nbsp<input type="text" name="mname" class="inpt1"> <br>
-	Last name &nbsp&nbsp&nbsp&nbsp<input type="text" name="lname" required  class="inpt1"><br>
-	E-mail &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="email" name="email"   class="inpt1" required><br>
-	Password &nbsp&nbsp&nbsp&nbsp&nbsp<input type="password" name ="pass"  class="inpt1" required><br>
-	Confirm password<input type="password"  name="pass1" class="inpt1" required><br>
+	First name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="fname"  required class="inpt1"><br>
+	Middle name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="mname" class="inpt1"> <br>
+	Last name &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="lname" required  class="inpt1"><br>
+	E-mail &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="email" name="email"   class="inpt1" required><br>
+	Password &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="password" name ="pass"  class="inpt1" required><br>
+	Confirm password <input type="password"  name="pass1" class="inpt1" required><br>
 	Phone number &nbsp&nbsp&nbsp&nbsp<input type="text" name="number"  class="inpt1" required>
 	<br>
 
-Date of birth:<input type="date" name="date"  class="inpt1" required>
+Date of birth:&nbsp&nbsp&nbsp&nbsp<input type="date" name="date"  class="inpt1" required>
 <br><br></div>
 
 	Gender:<input type="radio" name="sex" value="Male"  class="inpt1" required>Male 

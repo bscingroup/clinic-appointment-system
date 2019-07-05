@@ -26,13 +26,13 @@
 input[type="text"],input[type="password"],input[type="date"],input[type="email"]{
 	
 	margin-bottom: 5px;
-	padding:15px;
-	height:4px;
+	padding:20px;
+	height:3px;
 	width:200px;
 	border: 1px solid navy;
 	border-radius: 20px;	
 	background-color: lavender;
-	text-align: end;
+	
 
 }
 .ben h2{

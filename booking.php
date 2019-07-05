@@ -94,24 +94,27 @@
 
   <div class="h">
     
-   <ul>
-       <?php  if(is_loggedin_customer()) 
-       {
-        
-         echo '<li><a href="logout.php">Signout</a></li>
-      </ul>'
-        .$userlog['firstname'];
-      }
-      else {
-        echo 'invalid';
-      }?>
-    
+   
  
   <center>
     
   
 
-    <h2 style="font-size: 45px; font-family:sans-serif;color:green"><i>congratulation welcome to the confirmation page.</i></h2>
+    <h2 style="font-size: 45px; font-family:sans-serif;color:green">
+      <i>
+      congratulation
+      <span>
+       <?php  if(is_loggedin_customer()) 
+       {
+        
+       echo''.$userlog['firstname'];
+      }
+      else {
+        echo 'invalid';
+      }?>
+    </span>
+      welcome to the confirmation page.</i>
+    </h2>
   
 
 </div>
